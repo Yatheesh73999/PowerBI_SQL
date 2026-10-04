@@ -1,0 +1,105 @@
+table salesperson
+	lineageTag: 5523251e-7b38-4cc3-99b5-716e23096c37
+
+	column BusinessEntityID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d3e4fca1-993a-43d0-b588-9922987ea447
+		summarizeBy: count
+		sourceColumn: BusinessEntityID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryID
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 094c33dd-9b77-4a4c-8d8e-da3c9ba8362e
+		summarizeBy: none
+		sourceColumn: TerritoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesQuota
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 0eb29404-f63f-4142-bdf6-f9cca837e45d
+		summarizeBy: none
+		sourceColumn: SalesQuota
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bonus
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0a91d58d-e0f3-4b4e-80d1-9910b39b72b7
+		summarizeBy: sum
+		sourceColumn: Bonus
+
+		annotation SummarizationSetBy = Automatic
+
+	column CommissionPct
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 50cb97d6-6837-43ba-ba17-8e9be7f49d6f
+		summarizeBy: sum
+		sourceColumn: CommissionPct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SalesYTD
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 3e46fad5-14e9-4619-9df3-22d17f6cf0d7
+		summarizeBy: sum
+		sourceColumn: SalesYTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SalesLastYear
+		dataType: double
+		sourceProviderType: double
+		lineageTag: bde3e2ab-4ba3-42d0-8e43-9a60eaf5a6d1
+		summarizeBy: sum
+		sourceColumn: SalesLastYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rowguid
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3b234654-f013-4427-a52d-4192959dd4b7
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b949cb3f-4f45-49c9-a9df-24a66ab257bf
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition salesperson = m
+		mode: import
+		source =
+				let
+				  Source = MySQL.Database("127.0.0.1:3306", "adventureworks"),
+				  #"Navigation 1" = Source{[Schema = "adventure", Item = "salesperson"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

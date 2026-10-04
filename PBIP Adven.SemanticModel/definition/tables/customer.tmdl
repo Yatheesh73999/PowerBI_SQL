@@ -1,0 +1,84 @@
+table customer
+	lineageTag: 99d249ce-f10f-4cff-a516-b1f6f1015c3b
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 570fe70e-7613-44a5-bc70-8af3c06040ee
+		summarizeBy: count
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PersonID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2dffcfd9-0179-4cef-80b6-6033bde7cf0a
+		summarizeBy: none
+		sourceColumn: PersonID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 38e2155f-0915-4c84-a8da-9674b87f944c
+		summarizeBy: count
+		sourceColumn: StoreID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: abeaff18-e9fd-4960-984b-ed640bf10c0c
+		summarizeBy: count
+		sourceColumn: TerritoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountNumber
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a9809954-68f9-47b4-8b93-c76741340935
+		summarizeBy: none
+		sourceColumn: AccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 9859a347-b922-4242-96b5-1e4e29bcad7d
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 4e14eedb-673b-4a8e-a29e-e8147dadd26f
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customer = m
+		mode: import
+		source =
+				let
+				  Source = MySQL.Database("127.0.0.1:3306", "adventureworks"),
+				  #"Navigation 1" = Source{[Schema = "adventure", Item = "customer"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(#"Navigation 1",null,"NULL",Replacer.ReplaceValue,{"PersonID"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"PersonID", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

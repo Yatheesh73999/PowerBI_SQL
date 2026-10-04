@@ -1,0 +1,130 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 24.801853999999992,
+            "y": 126.05293058495124
+          },
+          "nodeIndex": "customer",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 73.848350469186727,
+            "y": 420.93268794290526
+          },
+          "nodeIndex": "salesterritory",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 941.08215650953548,
+            "y": 209.86738057238372
+          },
+          "nodeIndex": "salesperson",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 782.166906467644,
+            "y": 578.51556103395853
+          },
+          "nodeIndex": "salesorderheader",
+          "size": {
+            "height": 283.20452657501926,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 422.58727605523075,
+            "y": 548.5400483697631
+          },
+          "nodeIndex": "salesorderdetail",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 149.95155894289448,
+            "y": 739.69909858836888
+          },
+          "nodeIndex": "productsubcategory",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 559.11416686062591,
+            "y": 0
+          },
+          "nodeIndex": "productcategory",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 552,
+            "y": 197.08322358495121
+          },
+          "nodeIndex": "product",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 276,
+            "y": 87.083223584951213
+          },
+          "nodeIndex": "person",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 70.955543900968877,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

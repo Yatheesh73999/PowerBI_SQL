@@ -1,0 +1,28 @@
+relationship salesorderheader_CustomerID_to_customer
+	fromColumn: salesorderheader.CustomerID
+	toColumn: customer.CustomerID
+
+relationship salesorderheader_SalesPersonID_to_salesperson
+	fromColumn: salesorderheader.SalesPersonID
+	toColumn: salesperson.BusinessEntityID
+
+relationship salesorderheader_TerritoryID_to_salesterritory
+	fromColumn: salesorderheader.TerritoryID
+	toColumn: salesterritory.TerritoryID
+
+relationship salesorderdetail_SalesOrderID_to_salesorderheader
+	fromColumn: salesorderdetail.SalesOrderID
+	toColumn: salesorderheader.SalesOrderID
+
+relationship salesorderdetail_ProductID_to_product
+	fromColumn: salesorderdetail.ProductID
+	toColumn: product.ProductID
+
+relationship productsubcategory_ProductCategoryID_to_productcategory
+	fromColumn: productsubcategory.ProductCategoryID
+	toColumn: productcategory.ProductCategoryID
+
+relationship salesperson_BusinessEntityID_to_person
+	fromColumn: salesperson.BusinessEntityID
+	toColumn: person.BusinessEntityID
+

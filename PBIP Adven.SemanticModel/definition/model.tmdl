@@ -1,0 +1,27 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["customer","person","product","productcategory","productsubcategory","salesorderdetail","salesorderheader","salesperson","salesterritory"]
+
+annotation PBI_ProTooling = ["MCP-PBIModeling","DevMode"]
+
+ref table customer
+ref table person
+ref table product
+ref table productcategory
+ref table productsubcategory
+ref table salesorderdetail
+ref table salesorderheader
+ref table salesperson
+ref table salesterritory
+
+ref cultureInfo en-IN
+

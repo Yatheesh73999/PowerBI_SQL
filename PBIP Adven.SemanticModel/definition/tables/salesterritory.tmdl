@@ -1,0 +1,113 @@
+table salesterritory
+	lineageTag: a15d35c0-0fc4-498a-99b3-c910472a5f72
+
+	column TerritoryID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e500b4a3-b7f5-461e-be71-bea242dcbd02
+		summarizeBy: count
+		sourceColumn: TerritoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cbf3fb53-422c-4dbd-aea0-5fd451e50f83
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegionCode
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cc5b54ae-1b1f-4989-89f6-debe798d05c4
+		summarizeBy: none
+		sourceColumn: CountryRegionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Group
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c44b4b6e-c85e-4277-99d8-79099e936ac5
+		summarizeBy: none
+		sourceColumn: Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesYTD
+		dataType: double
+		sourceProviderType: double
+		lineageTag: d8ce2ea7-0a34-4599-9af2-2144275b2483
+		summarizeBy: sum
+		sourceColumn: SalesYTD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SalesLastYear
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 398455f9-c75a-4823-ae9a-21211bedb671
+		summarizeBy: sum
+		sourceColumn: SalesLastYear
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CostYTD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 71c3eb54-23cf-4633-b402-4b93a6765274
+		summarizeBy: sum
+		sourceColumn: CostYTD
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostLastYear
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bc4ee3d1-6f74-456a-aed6-41dc4d9a1ee2
+		summarizeBy: sum
+		sourceColumn: CostLastYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 1d960187-3878-4e78-a067-8936afc9eab7
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 8443365b-9cad-4324-a036-15c4cfe80134
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition salesterritory = m
+		mode: import
+		source =
+				let
+				  Source = MySQL.Database("127.0.0.1:3306", "adventureworks"),
+				  #"Navigation 1" = Source{[Schema = "adventure", Item = "salesterritory"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

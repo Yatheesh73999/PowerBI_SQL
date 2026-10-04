@@ -1,0 +1,125 @@
+table salesorderdetail
+	lineageTag: 8ab08f3a-5ecd-4450-99db-02569c1412c8
+
+	column SalesOrderID
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: a6530427-a1ea-4482-ad05-f1554c7edecf
+		summarizeBy: none
+		sourceColumn: SalesOrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderDetailID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: faf11b62-e811-4fab-97f0-7098a16eb427
+		summarizeBy: count
+		sourceColumn: SalesOrderDetailID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CarrierTrackingNumber
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 28404fa0-749e-4b57-a753-e41c90de421b
+		summarizeBy: none
+		sourceColumn: CarrierTrackingNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQty
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a81d71c6-69c4-4ad1-a115-d65daef12050
+		summarizeBy: sum
+		sourceColumn: OrderQty
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: af3b4007-c50a-4aac-b43f-67a048be93df
+		summarizeBy: count
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpecialOfferID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c087d091-d78e-4c9f-bb7b-70e0d03482e8
+		summarizeBy: count
+		sourceColumn: SpecialOfferID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 8e4d838a-7910-46d7-aada-9dae5ed0852c
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitPriceDiscount
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 67e360ff-1ae6-48db-b179-ddb0a30441b0
+		summarizeBy: sum
+		sourceColumn: UnitPriceDiscount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LineTotal
+		dataType: double
+		sourceProviderType: double
+		lineageTag: 2152b729-6346-48e9-933f-e60bb34f2fee
+		summarizeBy: sum
+		sourceColumn: LineTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rowguid
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6b1bc5ca-98ed-478a-a970-def5b08ce863
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 99e96e2b-f9f7-4648-aa3d-3bdac9038b16
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition salesorderdetail = m
+		mode: import
+		source =
+				let
+				  Source = MySQL.Database("127.0.0.1:3306", "adventureworks"),
+				  #"Navigation 1" = Source{[Schema = "adventure", Item = "salesorderdetail"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

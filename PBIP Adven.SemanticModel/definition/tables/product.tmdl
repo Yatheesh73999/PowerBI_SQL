@@ -1,0 +1,251 @@
+table product
+	lineageTag: 15b66434-2549-4bef-b6e3-90dc9a56d2b4
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8772cd8e-e42d-4042-8f9c-8eedf9f29ee7
+		summarizeBy: count
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c842b0ec-5f05-432d-97a3-79970c03f1cc
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductNumber
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 31eea88f-44c4-43e4-8b6d-862f254b2083
+		summarizeBy: none
+		sourceColumn: ProductNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MakeFlag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 87aeb398-6362-4745-94c9-7ddf0eb97be0
+		summarizeBy: sum
+		sourceColumn: MakeFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinishedGoodsFlag
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1f878c23-479e-4295-86b3-cb2026f661a8
+		summarizeBy: sum
+		sourceColumn: FinishedGoodsFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f99b2cd6-2ef5-41e0-8481-dadd93061ada
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column SafetyStockLevel
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 020b9208-ca07-4963-877e-c4359c06f8a4
+		summarizeBy: sum
+		sourceColumn: SafetyStockLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReorderPoint
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 42e99296-2b0e-4a35-91d7-df01b30b3587
+		summarizeBy: sum
+		sourceColumn: ReorderPoint
+
+		annotation SummarizationSetBy = Automatic
+
+	column StandardCost
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d91a2c38-8186-4a61-8977-2904dd1c8087
+		summarizeBy: sum
+		sourceColumn: StandardCost
+
+		annotation SummarizationSetBy = Automatic
+
+	column ListPrice
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4207af92-ad75-402a-b50c-d22c90555ed6
+		summarizeBy: sum
+		sourceColumn: ListPrice
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7c317b25-775a-45de-af9b-da25508ae589
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column SizeUnitMeasureCode
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: cdda13a3-115b-4eb0-b870-f8c5ba93bb6d
+		summarizeBy: none
+		sourceColumn: SizeUnitMeasureCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeightUnitMeasureCode
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 6101d223-fdfa-425c-ad2b-70648968b9c4
+		summarizeBy: none
+		sourceColumn: WeightUnitMeasureCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 690a9fbc-963b-4cc0-9e8d-4f80e7dd0d75
+		summarizeBy: none
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaysToManufacture
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 66d4a2d9-2c70-4782-879c-9960884b4c0d
+		summarizeBy: sum
+		sourceColumn: DaysToManufacture
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductLine
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 3f29d288-9417-4374-8047-6a3c7d3fe806
+		summarizeBy: none
+		sourceColumn: ProductLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column Class
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: f7adf1f8-08e3-43d6-880a-44d307e2a398
+		summarizeBy: none
+		sourceColumn: Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column Style
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: c72e927c-e3d9-45e0-8a4f-337043dd5f30
+		summarizeBy: none
+		sourceColumn: Style
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryID
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: fa1ec513-4f24-4687-a944-509d0cd88aa1
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductModelID
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: b1c8cee2-9ff4-4604-a185-76900fcb1ed6
+		summarizeBy: none
+		sourceColumn: ProductModelID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SellStartDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: bd16274c-d57f-4a43-9407-0c5bdc67d014
+		summarizeBy: none
+		sourceColumn: SellStartDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column SellEndDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 653895e2-c3e6-4e1c-b3c7-9a9cc2c5ed9b
+		summarizeBy: none
+		sourceColumn: SellEndDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscontinuedDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 17de8266-320a-4692-97ef-67364d6534ae
+		summarizeBy: none
+		sourceColumn: DiscontinuedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 5a053dbf-824b-4ca5-ba18-56b4a2a7e5ec
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 72a3efe1-f75c-4042-be68-a35bf837f8fe
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition product = m
+		mode: import
+		source =
+				let
+				  Source = MySQL.Database("127.0.0.1:3306", "adventureworks"),
+				  #"Navigation 1" = Source{[Schema = "adventure", Item = "product"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

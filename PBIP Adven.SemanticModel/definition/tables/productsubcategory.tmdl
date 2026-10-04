@@ -1,0 +1,63 @@
+table productsubcategory
+	lineageTag: aaf2c18e-045e-4af2-af5b-f78a8727606b
+
+	column ProductSubcategoryID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6127008c-e1d8-4098-b7e6-0d746ec8e5cd
+		summarizeBy: count
+		sourceColumn: ProductSubcategoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategoryID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 3a5c1546-f0be-4d12-b4ff-b6fdbc48518a
+		summarizeBy: count
+		sourceColumn: ProductCategoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 7834d114-2ab1-40be-b202-47677dcc390f
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 48edf49e-710a-4140-ba47-12c1e0030fbe
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: string
+		sourceProviderType: nvarchar(65535)
+		lineageTag: 33f01c6a-8ff7-4fa0-bded-835cd42feeaa
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition productsubcategory = m
+		mode: import
+		source =
+				let
+				  Source = MySQL.Database("127.0.0.1:3306", "adventureworks"),
+				  #"Navigation 1" = Source{[Schema = "adventure", Item = "productsubcategory"]}[Data]
+				in
+				  #"Navigation 1"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

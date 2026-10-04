@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "PBIP Adven"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "59095c64-48e6-4394-ab74-30ec3a373a79"
+  }
+}

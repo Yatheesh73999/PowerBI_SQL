@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "PBIP Adven"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e2219d67-e3ee-4c01-b52c-fccf3ec569cb"
+  }
+}
